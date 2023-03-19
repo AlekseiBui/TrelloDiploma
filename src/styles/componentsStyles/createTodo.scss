@@ -1,0 +1,55 @@
+.createForm {
+    width: 650px;
+    background-color: rgb(130, 255, 130);
+    border: 2px solid rgb(50, 178, 50);
+    border-radius: 3px;
+    position: relative;
+    z-index: 1;
+    top: 0px;
+    left: 0px;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .createForm_title {
+        width: 150px;
+        height: 30px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+
+    .createForm_descrip {
+        height: 90px;
+        margin-top: 15px;
+        text-align: center;
+        border-radius: 5px;
+        font-size: 20px;
+    }
+
+    .createForm_footer {
+        margin-top: 15px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .footer_select {
+            width: 200px;
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            color: black;
+        }
+
+        button {
+            width: 150px;
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 17px;
+            color: black;
+        }
+    }
+}

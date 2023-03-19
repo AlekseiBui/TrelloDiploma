@@ -1,6 +1,14 @@
 @import './componentsStyles/header.scss';
 @import './componentsStyles/threeTabs.scss';
+@import './componentsStyles/createTodo.scss';
+@import './componentsStyles/progressCard.scss';
 
 body {
     font-weight: bold;
+}
+
+::placeholder {
+    color: black;
+    font-weight: bold;
+    font-size: 16px;
 }

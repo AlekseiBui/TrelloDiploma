@@ -18,11 +18,13 @@
             flex-direction: row;
             justify-content: space-between;
             padding: 10px 15px;
+            font-size: 20px;
         }
 
         .progressTab_btn {
             padding: 10px 15px;
             font-weight: bold;
+            font-size: 16px;
         }
     }
 
@@ -38,6 +40,7 @@
             background-color: rgb(130, 255, 130);
             border: 2px solid rgb(50, 178, 50);
             border-radius: 3px;
+            margin-top: 10px;
             transition: 0.2s;
         }
 

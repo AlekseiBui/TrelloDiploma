@@ -1,0 +1,67 @@
+.progressCard {
+    width: 390px;
+    box-sizing: border-box;
+    margin: 10px auto;
+    padding: 10px 15px;
+    background-color: rgb(130, 255, 130);
+    border: 2px solid rgb(50, 178, 50);
+    border-radius: 3px;
+    font-size: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+
+    .progressCard_header {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        >div {
+            width: 160px;
+            height: 30px;
+            line-height: 30px;
+        }
+
+        button {
+            width: 90px;
+            height: 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 13px;
+            color: black;
+        }
+    }
+
+    .progressCard_middleForm {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+
+        .progressCard_descripForm {
+            width: 310px;
+            height: 80px;
+            line-height: 80px;
+        }
+
+        .progressCard_btn {
+            width: 40px;
+            height: 80px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 20px;
+            color: black;
+        }
+    }
+
+    .progressCard_footer {
+        width: 100%;
+        margin-top: 10px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}

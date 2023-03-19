@@ -6,7 +6,6 @@ const createTab = (tabName, btnName) => {
 
     const tabsHeader = document.createElement('div')
     tabsHeader.className = 'progressTab_header'
-    tab.append(tabsHeader)
 
     const tabsHeaderName = document.createElement('div')
     tabsHeaderName.className = 'header_tabsName'
@@ -15,6 +14,10 @@ const createTab = (tabName, btnName) => {
     tabsHeaderCounter.className = 'header_counter'
     tabsHeaderCounter.textContent = '0'
     tabsHeader.append(tabsHeaderName, tabsHeaderCounter)
+
+    const progressCardsWrapper = document.createElement('div')
+    progressCardsWrapper.className = 'progressTab_progressCardsWrapper'
+    tab.append(tabsHeader, progressCardsWrapper)
 
     if (btnName) {
         const tabsBtn = document.createElement('button')
