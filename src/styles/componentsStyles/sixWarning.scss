@@ -5,10 +5,10 @@
     border-radius: 4px;
     font-size: 18px;
     font-weight: bold;
-    position: relative;
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 216.6px);
     z-index: 1;
-    top: 0px;
-    left: 0px;
     padding: 15px;
     display: flex;
     flex-direction: column;
