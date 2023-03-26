@@ -1,3 +1,5 @@
+import { editTodoCard } from "./editCard"
+
 const createProgressCard = (titleText, descripText, userText) => {
     const progressCard = document.createElement('div')
     progressCard.className = 'progressCard'
@@ -12,6 +14,14 @@ const createProgressCard = (titleText, descripText, userText) => {
     const editBtn = document.createElement('button')
     editBtn.className = 'progressCard_editBtn'
     editBtn.textContent = 'EDIT'
+    editBtn.addEventListener('click', (e) => {
+        if (!document.querySelector('.createForm')) {
+            const ourCard = e.target.closest('.progressCard')
+            const titleCard = title.textContent
+            const descripCard = descripForm.textContent
+            document.body.append(editTodoCard(titleCard, descripCard, ourCard))
+        }
+    })
 
     const deleteBtn = document.createElement('button')
     deleteBtn.className = 'progressCard_deleteBtn'
