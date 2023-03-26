@@ -30,7 +30,7 @@ const createProgressCard = (titleText, descripText, userText) => {
     deleteBtn.addEventListener('click', (e) => {
         const ourCard = e.target.closest('.progressCard')
         ourCard.remove()
-        document.querySelector('.createForm').remove()
+        if (document.querySelector('.createForm')) { document.querySelector('.createForm').remove() }
     })
     header.append(title, editBtn, deleteBtn)
 
@@ -52,10 +52,10 @@ const createProgressCard = (titleText, descripText, userText) => {
         const timeContent = ourCard.childNodes[2].childNodes[1].textContent
         if (ourCard.parentElement.parentElement.className === 'progressTab TODO') {
             const inProgress = document.querySelector('.IN-PROGRESS>.progressTab_progressCardsWrapper')
-            inProgress.append(changeProgressCard(titleContent, descripContent, userContent, timeContent))
+            inProgress.append(changeProgressCard(titleContent, descripContent, userContent))
         } else if (ourCard.parentElement.parentElement.className === 'progressTab IN-PROGRESS') {
             const done = document.querySelector('.DONE>.progressTab_progressCardsWrapper')
-            done.append(changeProgressCard(titleContent, descripContent, userContent, timeContent))
+            done.append(changeProgressCard(titleContent, descripContent, userContent))
         }
         ourCard.remove()
     })

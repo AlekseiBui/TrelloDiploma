@@ -1,6 +1,6 @@
 import { editTodoCard } from "./editCard"
 
-const changeProgressCard = (titleText, descripText, userText, timeText) => {
+const changeProgressCard = (titleText, descripText, userText) => {
     const progressCard = document.createElement('div')
     progressCard.className = 'progressCard'
 
@@ -29,7 +29,7 @@ const changeProgressCard = (titleText, descripText, userText, timeText) => {
     deleteBtn.addEventListener('click', (e) => {
         const ourCard = e.target.closest('.progressCard')
         ourCard.remove()
-        document.querySelector('.createForm').remove()
+        if (document.querySelector('.createForm')) { document.querySelector('.createForm').remove() }
     })
     header.append(title, editBtn, deleteBtn)
 
@@ -48,13 +48,12 @@ const changeProgressCard = (titleText, descripText, userText, timeText) => {
         const titleContent = ourCard.childNodes[0].childNodes[0].textContent
         const descripContent = ourCard.childNodes[1].childNodes[0].textContent
         const userContent = ourCard.childNodes[2].childNodes[0].textContent
-        const timeContent = ourCard.childNodes[2].childNodes[1].textContent
         if (ourCard.parentElement.parentElement.className === 'progressTab TODO') {
             const inProgress = document.querySelector('.IN-PROGRESS>.progressTab_progressCardsWrapper')
-            inProgress.append(changeProgressCard(titleContent, descripContent, userContent, timeContent))
+            inProgress.append(changeProgressCard(titleContent, descripContent, userContent))
         } else if (ourCard.parentElement.parentElement.className === 'progressTab IN-PROGRESS') {
             const done = document.querySelector('.DONE>.progressTab_progressCardsWrapper')
-            done.append(changeProgressCard(titleContent, descripContent, userContent, timeContent))
+            done.append(changeProgressCard(titleContent, descripContent, userContent))
         }
         ourCard.remove()
     })
@@ -69,7 +68,7 @@ const changeProgressCard = (titleText, descripText, userText, timeText) => {
 
     const timeForm = document.createElement('div')
     timeForm.className = 'progressCard_timeForm'
-    timeForm.textContent = timeText
+    timeForm.textContent = `${new Date().toLocaleTimeString()}`
     footer.append(userForm, timeForm)
 
     progressCard.append(header, middleForm, footer)
