@@ -1,7 +1,6 @@
-import { changeProgressCard } from "./changeProgress"
 import { editTodoCard } from "./editCard"
 
-const createProgressCard = (titleText, descripText, userText) => {
+const changeProgressCard = (titleText, descripText, userText, timeText) => {
     const progressCard = document.createElement('div')
     progressCard.className = 'progressCard'
 
@@ -70,7 +69,7 @@ const createProgressCard = (titleText, descripText, userText) => {
 
     const timeForm = document.createElement('div')
     timeForm.className = 'progressCard_timeForm'
-    timeForm.textContent = `${new Date().toLocaleTimeString()}`
+    timeForm.textContent = timeText
     footer.append(userForm, timeForm)
 
     progressCard.append(header, middleForm, footer)
@@ -78,5 +77,5 @@ const createProgressCard = (titleText, descripText, userText) => {
 }
 
 export {
-    createProgressCard
+    changeProgressCard
 }

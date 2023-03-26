@@ -11,7 +11,6 @@
         border-radius: 5px;
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
 
         .progressTab_header {
             display: flex;
@@ -29,6 +28,8 @@
     }
 
     .progressTab.TODO {
+        justify-content: space-between;
+
         .progressTab_header {
             background-color: rgb(130, 255, 130);
             border: 2px solid rgb(50, 178, 50);
@@ -59,6 +60,8 @@
     }
 
     .progressTab.DONE {
+        justify-content: space-between;
+
         .progressTab_header {
             background-color: rgb(130, 201, 255);
             border: 2px solid rgb(40, 178, 255);
@@ -70,6 +73,7 @@
             background-color: rgb(130, 201, 255);
             border: 2px solid rgb(40, 178, 255);
             border-radius: 3px;
+            margin-top: 10px;
             transition: 0.2s;
         }
 
