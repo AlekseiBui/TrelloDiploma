@@ -48,14 +48,16 @@ const changeProgressCard = (titleText, descripText, userText) => {
         const titleContent = ourCard.childNodes[0].childNodes[0].textContent
         const descripContent = ourCard.childNodes[1].childNodes[0].textContent
         const userContent = ourCard.childNodes[2].childNodes[0].textContent
-        if (ourCard.parentElement.parentElement.className === 'progressTab TODO') {
+        if (document.querySelector('.IN-PROGRESS>.progressTab_progressCardsWrapper').children.length >= 6) { document.body.append(sixWarning()) }
+        else if (ourCard.parentElement.parentElement.className === 'progressTab TODO') {
             const inProgress = document.querySelector('.IN-PROGRESS>.progressTab_progressCardsWrapper')
             inProgress.append(changeProgressCard(titleContent, descripContent, userContent))
+            ourCard.remove()
         } else if (ourCard.parentElement.parentElement.className === 'progressTab IN-PROGRESS') {
             const done = document.querySelector('.DONE>.progressTab_progressCardsWrapper')
             done.append(changeProgressCard(titleContent, descripContent, userContent))
+            ourCard.remove()
         }
-        ourCard.remove()
     })
     middleForm.append(descripForm, middleFormBtn)
 
